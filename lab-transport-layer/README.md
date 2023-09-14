@@ -109,17 +109,23 @@ with their appropriate sockets.
 
 Take a look at the contents of `scenario1.cfg`.  Then run the following to
 start it up:
-
-Run the following command:
+Make sure you have iptables installed
 
 ```bash
 $ su-
 # apt install iptables-persistent
 # exit
-$ chmod 755 ./scenario1.py 
+```
+Run the following command:
+
+```bash
 $ cougarnet --disable-ipv6 --display scenario1.cfg
 ```
+If you receive a "permission denied" error, run the following before the starter command:
 
+```bash
+$ chmod 755 ./scenario1.py
+```
 At this point, the only output will be log messages indicating that messages
 are being sent from the `NetcatUDP` instance on hosts `a` and `c` to a remote
 address and port.  While eventually (after the first message) there is an
