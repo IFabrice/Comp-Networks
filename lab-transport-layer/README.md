@@ -113,6 +113,10 @@ start it up:
 Run the following command:
 
 ```bash
+$ su-
+# apt install iptables-persistent
+# exit
+$ chmod 755 ./scenario1.py 
 $ cougarnet --disable-ipv6 --display scenario1.cfg
 ```
 
