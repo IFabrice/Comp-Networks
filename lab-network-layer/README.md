@@ -424,7 +424,7 @@ before you begin, as it might be easier for you to do one before the other.
 
 ## Instructions
 
- 1. Fill out the following functions (marked with `FIXME`) in `prefix.py`:
+ 1. Fill out the following functions (marked with `TODO`) in `prefix.py`:
 
     - `ip_prefix_mask()`
     - `ip_prefix()`
@@ -461,7 +461,7 @@ before you begin, as it might be easier for you to do one before the other.
       python3 -m doctest prefix.py
       ```
 
- 4. Fill out the following method (marked with `FIXME`):
+ 4. Fill out the following method (marked with `TODO`):
 
     - `ForwardingTable.get_forwarding_entry()` (approx. 10 lines of code)
 
