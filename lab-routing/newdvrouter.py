@@ -77,10 +77,10 @@ class DVRouter(BaseHost):
         '''TODO: Assign values to self._neighbor_name_to_ip and self.neighbor_dvs '''
 
         if neighbor_name in self._link_down_alarm:
-            '''TODO: Fill in what should happen if the if statement is true.'''
+            '''TODO: Fill in what should happen if the if statement is true. This is the second time you've seen this neighbor in a certain period of time. You might have to check the asyncio library.'''
         loop = asyncio.get_event_loop()
 
-        '''TODO: Fill in the appropriate arguments. Hint: there are 3. '''
+        '''TODO: Fill in the appropriate arguments. Hint: there are 3. Pessimistically believing that I will never see this neighbor again. You might have to check the asyncio library.'''
         '''self._link_down_alarm[neighbor_name] = loop.call_later()'''
 
     def send_dv_next(self):
