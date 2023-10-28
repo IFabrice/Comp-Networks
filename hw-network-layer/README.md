@@ -1,11 +1,11 @@
-#Read these topics before completing the homework. For more information on each topic, visit the links provided.
+# Read these topics before completing the homework. For more information on each topic, visit the links provided.
 
-#ICMP
+# ICMP
 Internet Control Message Protocol (ICMP) is a network layer protocol used to diagnose communication errors by performing an error control mechanism. Since IP does not have an inbuilt mechanism for sending error and control messages. It depends on Internet Control Message Protocol (ICMP) to provide error control. 
 ICMP is used for reporting errors and management queries. It is a supporting protocol and is used by network devices like routers for sending error messages and operations information. For example, the requested service is not available or a host or router could not be reached.
 For more details visit: https://www.geeksforgeeks.org/internet-control-message-protocol-icmp/
 
-#MAC Address
+# MAC Address
 To communicate or transfer data from one computer to another, we need an address. In computer networks, various types of addresses are introduced; each works at a different layer. A MAC address, which stands for Media Access Control Address, is a physical address that works at the Data Link Layer. 
 MAC Addresses are unique 48-bit hardware numbers of a computer that are embedded into a network card (known as a Network Interface Card) during manufacturing. The MAC Address is also known as the Physical Address of a network device. In the IEEE 802 standard, the data link layer is divided into two sublayers:
 1.	Logical Link Control (LLC) Sublayer
@@ -17,7 +17,7 @@ MAC addresses are often used in conjunction with ARP (Address Resolution Protoco
 
 For more information visit: https://www.geeksforgeeks.org/mac-address-in-computer-network/
 
-#ARP
+# ARP
 Most computer programs/applications use logical addresses (IP Addresses) to send/receive messages. However, the actual communication happens over the Physical Address (MAC Address) that is from layer 2 of the OSI model. So our mission is to get the destination MAC Address which helps in communicating with other devices. This is where ARP comes into the picture, its functionality is to translate IP addresses to Physical Addresses.
 Imagine a device that wants to communicate with others over the internet. What does ARP do? It broadcasts a packet to all the devices of the source network. The devices of the network peel the header of the data link layer from the Protocol Data Unit (PDU) called frame and transfer the packet to the network layer (layer 3 of OSI) where the network ID of the packet is validated with the destination IP’s network ID of the packet and if it’s equal then it responds to the source with the MAC address of the destination, else the packet reaches the gateway of the network and broadcasts packet to the devices it is connected with and validates their network ID. The above process continues till the second last network device in the path reaches the destination where it gets validated and ARP, in turn, responds with the destination MAC address.
 For more information, visit: https://www.geeksforgeeks.org/how-address-resolution-protocol-arp-works/
