@@ -811,12 +811,7 @@ following distribution:
    this helps you, please do it!  Just note that your submission will be graded
    using only your `host.py`, `prefix.py`, and `forwarding_table.py`. The other
    files used will be the stock files [you were provided](#resources-provided).
- - Save your work often, especially as you move from part to part.  You are
-   encouraged to
-   [commit your changes](../contrib/github-repo-mirror/README.md#commit-and-push-local-changes-to-private-repo).
-   to the private GitHub repository that you created
-   [in an earlier assignment](../contrib/github-repo-mirror/README.md).
-   Please ensure that it remains private!
+
 
 
 
