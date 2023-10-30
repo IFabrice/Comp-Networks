@@ -363,7 +363,7 @@ format:
 <td colspan="32">Data :::</td></tr>
 </table>
 
-(See also http://www.networksorcery.com/Enp/protocol/arp.htm)
+(See also https://www.geeksforgeeks.org/arp-protocol-packet-format/)
 
 Regarding the fields:
  - Hardware Type will always be Ethernet (`ARPHRD_ETHER = 1`)
@@ -746,7 +746,7 @@ instances.  The packet that you will be receiving looks like this:
 <tr>
 <td colspan="32">Options and padding :::</td></tr>
 </table>
-(See also http://www.networksorcery.com/Enp/protocol/ip.htm)
+(See also https://datatracker.ietf.org/doc/html/rfc791#page-11)
 
 
 ### Address Representation Conversion
