@@ -819,19 +819,6 @@ following distribution:
    Please ensure that it remains private!
 
 
-# Putting the Pieces Together (Optional)
-
-With working implementations of ARP and IP forwarding, you may now bring in
-your own switch implementation that you completed in the last lab.  To do this,
-copy your working `switch.py` into your current directory, and then run the
-following:
-
-```
-$ cougarnet --disable-ipv6 --terminal=none scenario1-mine.cfg
-$ cougarnet --disable-ipv6 --terminal=none scenario2-mine.cfg
-```
-
-Yep, that is all your software moving around real frames and packets!
 
 
 # Submission
