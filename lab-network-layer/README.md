@@ -29,7 +29,6 @@ and a router!
  - [Automated Testing](#automated-testing)
  - [Evaluation](#evaluation)
  - [General Helps](#general-helps)
- - [Putting the Pieces Together (Optional)](#putting-the-pieces-together-optional)
  - [Submission](#submission)
 
 
