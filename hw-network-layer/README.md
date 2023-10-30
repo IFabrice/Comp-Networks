@@ -359,7 +359,7 @@ By default, all terminals will show up, but you can adjust this with the
      (i.e., routers) did the ICMP echo response pass through?
 
  14. For each part of this problem, run the given command from `h1`, look at
-     the Wireshark capture, and then respond with 1) the host or router the
+     the Wireshark capture, and then respond with 1) the host or router that
      sent the ICMP error and 2) a *brief* description of why the ICMP error
      was sent.  For example, if the ICMP message is "port unreachable", do not
      write "port unreachable" but rather "the host was not listening on the
