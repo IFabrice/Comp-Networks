@@ -323,13 +323,13 @@ $ cougarnet --disable-ipv6 --terminal=none scenario1.cfg
 ### Ethernet Frames
 
 See the documentation for the Link-Layer lab for
-[additional helps for Ethernet frames](../help.pdf). 
+[additional helps for Ethernet frames](Help.pdf). 
 
 
 ### Working with `bytes` Instances
 
 See the documentation for the Link-Layer lab for
-[additional helps on working with bytes instances](../help.pdf). 
+[additional helps on working with bytes instances](Help.pdf). 
 
 
 ### ARP Packets
