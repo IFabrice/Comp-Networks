@@ -61,27 +61,33 @@ class DVRouter(BaseHost):
     def _send_msg(self, msg: bytes, dst: str) -> None:
         '''Send a DV message, msg, on our UDP socket to dst.'''
 
+
         self.sock.sendto(msg, (dst, DV_PORT))
 
     def handle_dv_message(self, msg: bytes) -> None:
         d = json.loads(msg.decode('utf-8'))
-        '''TODO: assign values to neighbor_name, neighbor_ip, and neighbor_dv'''
-        '''neighbor_name = '''
-        '''neighbor_ip = '''
-        
-        ''' End TODO'''
+        neighbor_name = d['name']
+        neighbor_ip = d['ip']
+        neighbor_dv = d['dv']
+
+        # import pdb
+        # pdb.set_trace()
         
         if neighbor_name == self.hostname:
             return
 
         '''TODO: Assign values to self._neighbor_name_to_ip and self.neighbor_dvs '''
-
+        self._neighbor_name_to_ip[neighbor_name] = neighbor_ip
+        self.neighbor_dvs[neighbor_name] = neighbor_dv
+    
         if neighbor_name in self._link_down_alarm:
             '''TODO: Fill in what should happen if the if statement is true. This is the second time you've seen this neighbor in a certain period of time. You might have to check the asyncio library.'''
+            self._link_down_alarm[neighbor_name].cancel()
+            del self._link_down_alarm[neighbor_name]
         loop = asyncio.get_event_loop()
 
         '''TODO: Fill in the appropriate arguments. Hint: there are 3. Pessimistically believing that I will never see this neighbor again. You might have to check the asyncio library.'''
-        '''self._link_down_alarm[neighbor_name] = loop.call_later()'''
+        self._link_down_alarm[neighbor_name] = loop.call_later(NEIGHBOR_CHECK_INTERVAL, self.handle_down_link, neighbor_name)
 
     def send_dv_next(self):
         '''Send DV to neighbors, and schedule this method to be called again in
@@ -133,15 +139,21 @@ class DVRouter(BaseHost):
     def update_dv(self) -> None:
         forwarding_table = {}
 
-        # TODO: get neighboring costs
-        # neighbor_costs = 
-
         # initialize DV with distance 0 to own IP addresses
         dv = dict([(intinfo.ipv4_addrs[0], 0) \
                 for intinfo in self.int_to_info.values() if intinfo.ipv4_addrs])
 
+
         #TODO: Complete the for loop. NOTE: don't try to add a route for local
         for neighbor in self.neighbor_dvs:
+            dv[self._neighbor_name_to_ip[neighbor]] = 1
+            neighbor_dvs = self.neighbor_dvs[neighbor]
+            
+            for ip in neighbor_dvs:
+                if ip in dv:
+                    dv[ip] = min(dv[ip], 1 + neighbor_dvs[ip])
+                else:
+                    dv[ip] = neighbor_dvs[ip] + 1
 
         if dv == self.my_dv:
             send_new_dv = False

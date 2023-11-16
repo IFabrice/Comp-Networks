@@ -23,6 +23,8 @@ class Lab2Tester:
     expected_observations = []
 
     def evaluate(self, iteration, time_seen, observations):
+        import pdb
+        pdb.set_trace()
         if iteration >= len(self.expected_observations):
             # not evaluated
             return None
